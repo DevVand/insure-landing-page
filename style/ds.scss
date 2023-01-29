@@ -31,12 +31,12 @@ $ff-body-weight-bold: 700;
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
     font-family: $ff-heading;
 }
 
+h4,
 p,
 a,
 li {
@@ -65,11 +65,6 @@ $title-dark-color: $dark-primary;
     outline: none;
     text-decoration: none;
 }
-
-img {
-    height: fit-content;
-}
-
 .container {
     width: 100%;
     max-width: $max-width;
@@ -94,7 +89,7 @@ img {
     justify-content: center;
     align-items: center;
 }
-a{
+a,i{
     transition: color ease-in-out .3s, background-color ease-in-out .3s;
 }
 
@@ -138,3 +133,9 @@ a{
     @include button(false)
 }
 
+
+.fake-fluid {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
