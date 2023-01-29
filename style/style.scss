@@ -1,0 +1,171 @@
+@use 'ds';
+
+body {
+    header {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        background-color: #fff;
+
+        .container {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                letter-spacing: 0.06em;
+
+                .btn-primary {
+                    width: 150px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    main {
+
+        height: 755px;
+        background-color: ds.$primary;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to bottom, ds.$primary 600px, #fff 600px);
+
+        .fake-fluid {
+            position: relative;
+            max-width: 1440px;
+            margin: 0 auto;
+
+            .container {
+                padding-top: 105px;
+                gap: 14px;
+
+                .content {
+                    position: relative;
+                    z-index: 2;
+
+                    h1 {
+                        color: ds.$title-light-color;
+                        letter-spacing: 112%;
+                        font-size: ds.$fs-big-title;
+                        line-height: 72px;
+                        margin: 60px 0 14px 0;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            margin-bottom: 60px;
+                            width: 150px;
+                            height: 1px;
+                            background-color: ds.$title-light-color;
+                        }
+                    }
+
+                    p {
+                        color: ds.$body-light-color;
+                        font-weight: ds.$ff-body-weight-default;
+                        font-size: ds.$fs-text;
+                        line-height: 19px;
+                        letter-spacing: 0.011em;
+                        margin-bottom: 14px;
+                    }
+
+                    .btn-secondary {
+                        width: 145px;
+                        height: 40px;
+                    }
+                }
+            }
+
+        }
+
+        #intro-pattern-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 0;
+        }
+
+        #intro-left-right {
+            position: absolute;
+            top: 430px;
+            left: 0;
+            z-index: 0;
+        }
+
+    }
+
+    article {
+        margin-top: 150px !important;
+        flex-direction: column;
+
+        h2 {
+            font-size: ds.$fs-big-title;
+            line-height: 72px;
+            margin-bottom: 80px;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 150px;
+                margin-bottom: 60px;
+                height: 1px;
+                background-color: ds.$body-dark-color;
+            }
+        }
+
+        .section-group {
+            display: flex;
+            gap: 30px;
+
+            section {
+                h3 {
+                    margin: 38px 0 18px 0;
+                    font-weight: ds.$ff-heading-weight-default;
+                    font-size: ds.$fs-little-title;
+                    line-height: 36px;
+
+                }
+                p{
+                    color: ds.$body-dark-color;
+                    font-weight: ds.$ff-body-weight-default;
+                    font-size: ds.$fs-text;
+                    line-height: 25px;
+                    letter-spacing: 0.011em;
+                    margin-bottom: 14px;
+                }
+            }
+        }
+    }
+
+    div[role='banner']{
+        height: 250px;
+        position: relative;
+        background-color: ds.$primary;
+        color: ds.$title-light-color;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 80px;
+        margin-top: 150px !important;
+        margin-bottom: 150px !important;
+        h1{
+            font-size: ds.$fs-big-title;
+            line-height: 60px;
+            max-width: 560px;
+        }
+        a{
+            width: 150px;
+            height: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
