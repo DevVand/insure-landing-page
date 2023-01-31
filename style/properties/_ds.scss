@@ -1,0 +1,86 @@
+@import "colors";
+@import "fonts";
+@import "reset";
+@import "spacing";
+
+nav li,
+a {
+  text-transform: uppercase;
+}
+
+$body-dark-color: $primary-100;
+$body-light-color: $secondary-200;
+$title-light-color: $secondary-300;
+$title-dark-color: $primary-100;
+
+/*Styles*/
+$width: 1125px;
+$width-fluid: 1440px;
+
+//CONTAINERS
+.container {
+  width: 100%;
+  max-width: $width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: $width-fluid;
+  margin: 0 auto;
+}
+
+@mixin mobile{
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+.nav-list {
+  a {
+    color: $body-dark-color;
+    &:hover {
+      color: $title-dark-color;
+    }
+  }
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a,
+i {
+  transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
+}
+
+@mixin button($text-color, $hover-color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $text-color;
+  text-transform: uppercase;
+  color: $text-color !important;
+
+  &:hover {
+    background-color: $text-color;
+    color: $hover-color !important;
+  }
+}
+
+.btn-primary {
+  @include button($primary-100, $secondary-300);
+}
+
+.btn-secondary {
+  @include button($secondary-300, $primary-100);
+}
+
+.hidden{
+  display: none;
+}

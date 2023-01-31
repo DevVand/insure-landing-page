@@ -1,0 +1,37 @@
+article {
+
+  h2 {
+    &::before {
+      content: "";
+      display: block;
+      width: $spacing*20;
+      margin-bottom: $spacing*8;
+      height: 1px;
+      background-color: $secondary-100;
+    }
+
+    @extend .font-title;
+    color: $primary-200;
+    margin-bottom: $spacing*10;
+
+  }
+
+  .section-group {
+    display: flex;
+    gap: 30px;
+
+    section {
+      h3 {
+        @extend .font-sm-title;
+        color: $body-dark-color;
+        margin: $spacing*5 0 $spacing*2 0;
+      }
+
+      p {
+        @extend .font-text;
+        color: $secondary-200;
+        letter-spacing: 0.011em;
+      }
+    }
+  }
+}

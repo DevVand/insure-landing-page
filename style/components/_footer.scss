@@ -1,0 +1,60 @@
+footer{
+    background-color: $secondary-300;
+    text-transform: uppercase;
+    padding-bottom: $spacing*10;
+
+    .container{
+        position: relative;
+    .footer-header{
+        position: relative;
+        z-index: 2;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $secondary-400;
+        .social-medias{
+            display: flex;
+            gap: $spacing*2;
+            i{
+                font-size: $fs-sm-title;
+                color: $secondary-200;
+            }
+            a:hover i{
+                color: $primary-200;
+            }
+        }
+    }
+    .footer-content{
+        position: relative;
+        z-index: 2;
+        margin-top: $spacing*8;
+        display: flex;
+        gap: $spacing*22;
+        .footer-collumn{
+            @extend .font-text;
+            h4{
+                margin-bottom: $spacing*5;
+                color: $body-light-color;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                li > a{
+                    color: $title-dark-color;
+                    &:hover{
+                        color: $body-light-color;
+                    }
+                }
+            }
+        }
+    }
+}
+    #footer-pattern-desktop{
+        position: absolute;
+        top:0;
+        z-index: 1;
+    }
+
+}

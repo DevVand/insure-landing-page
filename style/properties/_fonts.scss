@@ -1,0 +1,51 @@
+//Headings
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+$ff-heading: "DM Serif Display", serif;
+$ff-heading-weight-default: 400;
+
+//Body
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,700;1,400&display=swap");
+$ff-body: "Karla", sans-serif;
+$ff-body-weight-default: 400;
+$ff-body-weight-bold: 700;
+
+//Font Sizes
+$fs-text: 16px;
+$lh-text: 24px;
+
+$fs-sm-text: 14px;
+$lh-sm-text: 21px;
+
+$fs-title: 64px;
+$lh-title: 72px;
+
+$fs-sm-title: 26px;
+$lh-sm-title: 34px;
+
+.font-title {
+  font-size: $fs-title;
+  line-height: $lh-title;
+  font-family: $ff-heading;
+  font-weight: $ff-body-weight-default;
+}
+
+.font-sm-title {
+  font-family: $ff-heading;
+  font-weight: $ff-body-weight-default;
+  font-size: $fs-sm-title;
+  line-height: $lh-sm-title;
+}
+
+.font-text {
+  font-family: $ff-body;
+  font-weight: $ff-body-weight-default;
+  font-size: $fs-text;
+  line-height: $lh-text;
+}
+
+.font-sm-text {
+  font-family: $ff-body;
+  font-weight: $ff-body-weight-default;
+  font-size: $fs-sm-text;
+  line-height: $lh-sm-text;
+}

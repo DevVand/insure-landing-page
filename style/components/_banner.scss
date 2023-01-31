@@ -1,0 +1,33 @@
+
+div[role='banner'] {
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-200;
+    color: $title-light-color;
+
+    padding: 0 $spacing*10;
+    margin-top: $spacing*20;
+    margin-bottom: $spacing*20;
+
+    h1 {
+        @extend .font-title;
+        max-width: 560px;
+    }
+
+    a {
+        @extend .font-text;
+        width: 150px;
+        height: 40px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #bg-pattern-how-we-work-desktop {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
