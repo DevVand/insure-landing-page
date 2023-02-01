@@ -1,27 +1,99 @@
 header {
-    width: 100%;
-    position: relative;
-    z-index: 2;
-    background-color: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
 
-    .container {
-        height: $spacing*10;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @extend .font-sm-text;
-        ul {
-            display: flex;
-            align-items: center;
-            gap: $spacing*2;
-            
-            letter-spacing: 0.06em;
+  .container {
+    height: $spacing * 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend .font-sm-text;
+    ul {
+    
+      display: flex;
+      align-items: center;
+      gap: $spacing * 2;
+      letter-spacing: 0.06em;
 
-            .btn-primary {
-                margin-left: $spacing;
-                width: $spacing*20;
-                height: $spacing*5;
-            }
+      .btn-primary {
+        margin-left: $spacing;
+        width: $spacing * 20;
+        height: $spacing * 5;
+      }
+
+      @include device(tablet){
+        position: absolute;
+        left: 0;
+        top: 0px + $spacing*10;
+        height: calc(100vh - $spacing*10);
+        width: 100%;
+        padding: $spacing*4;
+        background: url("../../images/bg-pattern-mobile-nav.svg") no-repeat bottom right, $body-dark-color;
+        flex-direction: column;
+        gap: $spacing*4;
+        li > a {
+            color: $title-light-color !important;
+            border-color: $title-light-color;
         }
+      }
     }
+
+    #menu-hamburguer {
+        display: none;
+        @include device(tablet){
+            display: block;
+        }
+
+      #checkbox-menu {
+        position: absolute;
+        opacity: 0;
+      }
+
+      label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        height: 22px;
+        width: 30px;
+      }
+
+      label span {
+        position: absolute;
+        display: block;
+        height: 5px;
+        width: 100%;
+        border-radius: 30px;
+        background: $body-dark-color;
+        transition: 0.25s ease-in-out;
+      }
+
+      label span:nth-child(1) {
+        top: 0;
+      }
+
+      label span:nth-child(2) {
+        top: 8px;
+      }
+
+      label span:nth-child(3) {
+        top: 16px;
+      }
+
+      #checkbox-menu:checked + label span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 8px;
+      }
+
+      #checkbox-menu:checked + label span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #checkbox-menu:checked + label span:nth-child(3) {
+        transform: rotate(45deg);
+        top: 8px;
+      }
+    }
+  }
 }

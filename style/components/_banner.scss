@@ -30,4 +30,32 @@ div[role='banner'] {
         top: 0;
         right: 0;
     }
+    #bg-pattern-how-we-work-mobile{
+        display: none;
+    }
+
+    @include device(tablet){
+        overflow: hidden;
+        flex-direction: column;
+        padding-top: $spacing*2;
+        padding-bottom: $spacing*2;
+        height: auto;
+        gap: $spacing*2;
+        h1{
+            font-size: 48px;
+            line-height: 56px;
+        }
+        a{
+            font-size: 12px;
+        }
+        #bg-pattern-how-we-work-desktop {
+            display: none;
+        }
+        #bg-pattern-how-we-work-mobile{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
 }

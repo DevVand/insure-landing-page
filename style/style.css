@@ -202,6 +202,10 @@ a {
   align-items: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
 a,
 i {
   transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
@@ -233,10 +237,6 @@ i {
   color: hsl(256deg, 26%, 20%) !important;
 }
 
-.hidden {
-  display: none;
-}
-
 header {
   width: 100%;
   position: relative;
@@ -260,10 +260,75 @@ header .container ul .btn-primary {
   width: 160px;
   height: 40px;
 }
+@media (max-width: 768px) {
+  header .container ul {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    height: calc(100vh - 80px);
+    width: 100%;
+    padding: 32px;
+    background: url("../../images/bg-pattern-mobile-nav.svg") no-repeat bottom right, hsl(256deg, 26%, 20%);
+    flex-direction: column;
+    gap: 32px;
+  }
+  header .container ul li > a {
+    color: hsl(0deg, 0%, 98%) !important;
+    border-color: hsl(0deg, 0%, 98%);
+  }
+}
+header .container #menu-hamburguer {
+  display: none;
+}
+@media (max-width: 768px) {
+  header .container #menu-hamburguer {
+    display: block;
+  }
+}
+header .container #menu-hamburguer #checkbox-menu {
+  position: absolute;
+  opacity: 0;
+}
+header .container #menu-hamburguer label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  height: 22px;
+  width: 30px;
+}
+header .container #menu-hamburguer label span {
+  position: absolute;
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: hsl(256deg, 26%, 20%);
+  transition: 0.25s ease-in-out;
+}
+header .container #menu-hamburguer label span:nth-child(1) {
+  top: 0;
+}
+header .container #menu-hamburguer label span:nth-child(2) {
+  top: 8px;
+}
+header .container #menu-hamburguer label span:nth-child(3) {
+  top: 16px;
+}
+header .container #menu-hamburguer #checkbox-menu:checked + label span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+header .container #menu-hamburguer #checkbox-menu:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+header .container #menu-hamburguer #checkbox-menu:checked + label span:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
 
 main {
   height: 800px;
-  background-color: hsl(270deg, 9%, 17%);
+  background-color: hsl(256deg, 26%, 20%);
   background-image: linear-gradient(to bottom, hsl(270deg, 9%, 17%) 600px, #fff 280px);
   margin-bottom: 80px;
 }
@@ -276,15 +341,13 @@ main .container-fluid .container {
   gap: 16px;
 }
 main .container-fluid .container .content {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 main .container-fluid .container .content h1 {
   color: hsl(0deg, 0%, 98%);
-  letter-spacing: 112%;
+  letter-spacing: 0.012em;
 }
 main .container-fluid .container .content h1::before {
   content: "";
@@ -302,17 +365,52 @@ main .container-fluid .container .content .btn-secondary {
   width: 160px;
   height: 40px;
 }
+main .container-fluid .container .content #image-intro-right-mobile, main .container-fluid .container .content #image-intro-left-mobile {
+  display: none;
+}
 main .container-fluid #intro-pattern-right {
   position: absolute;
-  top: 0;
+  top: -80px;
   right: 0;
-  z-index: 0;
 }
-main .container-fluid #intro-left-right {
+main .container-fluid #intro-pattern-left {
   position: absolute;
   top: 430px;
   left: 0;
-  z-index: 0;
+}
+@media (max-width: 768px) {
+  main {
+    overflow: hidden;
+    height: auto;
+    background: hsl(270deg, 9%, 17%);
+  }
+  main .container-fluid .container {
+    flex-direction: column-reverse;
+    padding: 0;
+    gap: 0;
+  }
+  main .container-fluid .container .content {
+    padding: 80px 16px;
+    position: relative;
+  }
+  main .container-fluid .container .content h1::before {
+    display: none;
+  }
+  main .container-fluid .container .content #image-intro-right-mobile, main .container-fluid .container .content #image-intro-left-mobile {
+    display: block;
+    position: absolute;
+  }
+  main .container-fluid .container .content #image-intro-right-mobile {
+    right: 0;
+    bottom: -150px;
+  }
+  main .container-fluid .container .content #image-intro-left-mobile {
+    left: 0;
+    top: 0;
+  }
+  main .container-fluid #intro-pattern-right, main .container-fluid #intro-pattern-left {
+    display: none;
+  }
 }
 
 article h2 {
@@ -322,8 +420,8 @@ article h2 {
 article h2::before {
   content: "";
   display: block;
+  margin-bottom: 72px;
   width: 160px;
-  margin-bottom: 64px;
   height: 1px;
   background-color: hsl(273deg, 4%, 51%);
 }
@@ -338,6 +436,28 @@ article .section-group section h3 {
 article .section-group section p {
   color: hsl(216deg, 30%, 68%);
   letter-spacing: 0.011em;
+}
+@media (max-width: 768px) {
+  article {
+    text-align: center;
+  }
+  article h2::before {
+    display: none;
+  }
+  article .section-group {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  article .section-group .circle {
+    margin: 0 auto;
+  }
+  article .section-group h3 {
+    margin-top: 16px !important;
+  }
 }
 
 div[role=banner] {
@@ -365,6 +485,35 @@ div[role=banner] #bg-pattern-how-we-work-desktop {
   position: absolute;
   top: 0;
   right: 0;
+}
+div[role=banner] #bg-pattern-how-we-work-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  div[role=banner] {
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    height: auto;
+    gap: 16px;
+  }
+  div[role=banner] h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  div[role=banner] a {
+    font-size: 12px;
+  }
+  div[role=banner] #bg-pattern-how-we-work-desktop {
+    display: none;
+  }
+  div[role=banner] #bg-pattern-how-we-work-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 footer {
@@ -400,11 +549,11 @@ footer .container .footer-content {
   z-index: 2;
   margin-top: 64px;
   display: flex;
-  gap: 176px;
+  justify-content: space-between;
 }
 footer .container .footer-content .footer-collumn h4 {
   margin-bottom: 40px;
-  color: hsl(216deg, 30%, 68%);
+  color: hsl(273deg, 4%, 51%);
 }
 footer .container .footer-content .footer-collumn ul {
   display: flex;
@@ -421,4 +570,23 @@ footer #footer-pattern-desktop {
   position: absolute;
   top: 0;
   z-index: 1;
+}
+@media (max-width: 768px) {
+  footer .footer-header {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  footer .footer-content {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+  footer .footer-content h4 {
+    margin-bottom: 16px !important;
+  }
+  footer #footer-pattern-desktop {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

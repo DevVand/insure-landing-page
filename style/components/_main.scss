@@ -1,6 +1,6 @@
 main {
   height: $spacing * 100;
-  background-color: $primary-200;
+  background-color: $primary-100;
   background-image: linear-gradient(
     to bottom,
     $primary-200 $spacing*75,
@@ -15,24 +15,15 @@ main {
       gap: $spacing * 2;
 
       .content {
-        position: relative;
-        z-index: 2;
         display: flex;
         flex-direction: column;
         gap: $spacing * 3;
         h1 {
           @extend .font-title;
           color: $title-light-color;
-          letter-spacing: 112%;
+          letter-spacing: 0.012em;
 
-          &::before {
-            content: "";
-            display: block;
-            margin-bottom: $spacing * 9;
-            width: $spacing * 20;
-            height: 1px;
-            background-color: $title-light-color;
-          }
+          @include separator($title-light-color);
         }
 
         p {
@@ -46,21 +37,59 @@ main {
           width: $spacing * 20;
           height: $spacing * 5;
         }
+        #image-intro-right-mobile,#image-intro-left-mobile{
+          display: none;
+        }
       }
+
     }
 
     #intro-pattern-right {
       position: absolute;
-      top: 0;
+      top: -80px;
       right: 0;
-      z-index: 0;
     }
 
-    #intro-left-right {
+    #intro-pattern-left{
       position: absolute;
       top: 430px;
       left: 0;
-      z-index: 0;
+    }
+  }
+
+  @include device(tablet){
+    overflow: hidden;
+    height: auto;
+    background: $primary-200;
+    .container-fluid{
+      .container{
+        flex-direction: column-reverse;
+        padding: 0;
+        gap: 0;
+        .content{
+          padding: $spacing*10 $spacing*2;
+          position: relative;
+          h1::before{
+            display: none;
+          }
+          #image-intro-right-mobile,#image-intro-left-mobile{
+            display: block;
+            position: absolute;
+          }
+          #image-intro-right-mobile{
+            right: 0;
+            bottom: -150px;
+          }
+          #image-intro-left-mobile{
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+
+      #intro-pattern-right,#intro-pattern-left{
+        display: none;
+      }
     }
   }
 }

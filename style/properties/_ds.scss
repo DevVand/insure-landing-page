@@ -13,6 +13,8 @@ $body-light-color: $secondary-200;
 $title-light-color: $secondary-300;
 $title-dark-color: $primary-100;
 
+
+
 /*Styles*/
 $width: 1125px;
 $width-fluid: 1440px;
@@ -31,10 +33,18 @@ $width-fluid: 1440px;
   margin: 0 auto;
 }
 
-@mixin mobile{
-  @media (max-width: 768px) {
-    @content;
+@mixin device($type) {
+  @if $type == tablet{
+    @media (max-width: 768px) {
+      @content;
+    }
   }
+  @else if $type == mobile{
+     @media (max-width: 425px) {
+      @content;
+    }
+  }
+
 }
 
 .nav-list {
@@ -54,6 +64,11 @@ $width-fluid: 1440px;
   align-items: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
+//BUTTONS 
 a,
 i {
   transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
@@ -81,6 +96,14 @@ i {
   @include button($secondary-300, $primary-100);
 }
 
-.hidden{
-  display: none;
+//SEPARATOR
+@mixin separator($color) {
+  &::before {
+    content: "";
+    display: block;
+    margin-bottom: $spacing * 9;
+    width: $spacing * 20;
+    height: 1px;
+    background-color: $color;
+  }
 }

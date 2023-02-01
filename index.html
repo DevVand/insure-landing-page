@@ -19,7 +19,7 @@
     <header>
       <nav role="navigation" class="container">
         <img src="images/logo.svg" alt="insure-logo" role="img" />
-        <ul role="menu" class="nav-list">
+        <ul role="menu" class="nav-list" id="header-menu-list">
           <li role="menuitem">
             <a href="#" title="How we work">How we work</a>
           </li>
@@ -29,13 +29,26 @@
             <a href="#" title="View plans" class="btn-primary">View plans</a>
           </li>
         </ul>
+        <div id="menu-hamburguer">
+          <input
+            type="checkbox"
+            id="checkbox-menu"
+            oninput="showMenu(this.checked)"
+          />
+
+          <label for="checkbox-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
       </nav>
     </header>
 
     <main role="main">
       <div class="container-fluid">
         <div class="container">
-          <div class="content">
+          <section class="content">
             <h1>Humanizing your insurance.</h1>
             <p role="text">
               Get your life insurance coverage easier and faster. We blend our
@@ -43,14 +56,25 @@
               for you. Ensure you and your loved ones are protected.
             </p>
             <a class="btn-secondary">View plans</a>
-          </div>
+            <img
+            src="images/bg-pattern-intro-left-mobile.svg"
+            alt="image-intro-left-mobile"
+            id="image-intro-left-mobile"
+            role="img"
+          />
+          <img
+          src="images/bg-pattern-intro-right-mobile.svg"
+          alt="image-intro-right-mobile"
+          id="image-intro-right-mobile"
+          role="img"
+        />
+          </section>
           <img
             src="images/image-intro-desktop.jpg"
             alt="image-intro-desktop"
             role="img"
           />
         </div>
-
         <img
           src="images/bg-pattern-intro-right-desktop.svg"
           alt="bg-pattern-intro-right-desktop.svg"
@@ -59,7 +83,7 @@
         <img
           src="images/bg-pattern-intro-left-desktop.svg"
           alt="bg-pattern-intro-left-desktop.svg"
-          id="intro-left-right"
+          id="intro-pattern-left"
         />
       </div>
     </main>
@@ -106,15 +130,21 @@
       </div>
     </article>
 
-
-    <div role="banner" class="container">
-      <h1>Find out more about how we work</h1>
-      <a href="#" class="btn-secondary" title="How we work">How we work</a>
-      <img
-        src="images/bg-pattern-how-we-work-desktop.svg"
-        alt="bg-pattern-how-we-work-desktop"
-        id="bg-pattern-how-we-work-desktop"
+    <div class="container">
+      <div role="banner" class="container">
+        <h1>Find out more about how we work</h1>
+        <a href="#" class="btn-secondary" title="How we work">How we work</a>
+        <img
+          src="images/bg-pattern-how-we-work-desktop.svg"
+          alt="bg-pattern-how-we-work-desktop"
+          id="bg-pattern-how-we-work-desktop"
+        />
+        <img
+        src="images/bg-pattern-how-we-work-mobile.svg"
+        alt="bg-pattern-how-we-work-mobile"
+        id="bg-pattern-how-we-work-mobile"
       />
+      </div>
     </div>
 
     <footer>
@@ -194,6 +224,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
-    
   </body>
 </html>

@@ -1,14 +1,8 @@
 article {
 
   h2 {
-    &::before {
-      content: "";
-      display: block;
-      width: $spacing*20;
-      margin-bottom: $spacing*8;
-      height: 1px;
-      background-color: $secondary-100;
-    }
+    
+    @include separator($secondary-100);
 
     @extend .font-title;
     color: $primary-200;
@@ -31,6 +25,27 @@ article {
         @extend .font-text;
         color: $secondary-200;
         letter-spacing: 0.011em;
+      }
+    }
+  }
+
+  @include device(tablet){
+    text-align: center;
+    h2::before{
+        display: none;
+    }
+    .section-group{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 350px;
+      margin: 0 auto;
+      gap: $spacing* 5;
+      .circle{
+        margin: 0 auto;
+      }
+      h3{
+        margin-top: $spacing*2 !important;
       }
     }
   }

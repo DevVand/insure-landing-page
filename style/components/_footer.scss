@@ -30,12 +30,13 @@ footer{
         z-index: 2;
         margin-top: $spacing*8;
         display: flex;
-        gap: $spacing*22;
+        justify-content: space-between;
+        //gap: $spacing*22;
         .footer-collumn{
             @extend .font-text;
             h4{
                 margin-bottom: $spacing*5;
-                color: $body-light-color;
+                color: $secondary-100;
             }
             ul{
                 display: flex;
@@ -57,4 +58,23 @@ footer{
         z-index: 1;
     }
 
+    @include device(tablet){
+        .footer-header{
+            flex-direction: column;
+            margin-bottom: $spacing*2;
+        }
+        .footer-content{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: $spacing*3;
+            h4{
+                margin-bottom: $spacing*2 !important;
+            }
+        }
+        #footer-pattern-desktop{
+            display: none;
+        }
+    }
 }
